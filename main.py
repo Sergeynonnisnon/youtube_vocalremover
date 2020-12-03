@@ -15,8 +15,10 @@ def get_audio (URL,filename):
     return audio_best.download(filename=filename)
 
 def main():
-    driver = webdriver.Chrome()
-    driver.get("https://vocalremover.org/en/")
+    driver = webdriver.Firefox('/geckodriver.exe')
+    print(driver.get("https://vocalremover.org/en/"))
+    upl_btn = driver.find_element_by_class_name(name='upload')
+    print (upl_btn)
 
 if __name__=='main':
     main()
